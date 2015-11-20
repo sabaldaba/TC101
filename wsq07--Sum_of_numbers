@@ -1,0 +1,14 @@
+print("Hey! This programm will ask you for two integers, the beginning")            
+print("and the end of a serie of numbers")
+print("So the program will display the addition of all the nubers")
+print("within the range of the ones you provide us")
+print()
+x = int(input("Please type the first number of your serie: "))                  
+print()
+y = int(input("Please type the second number of the serie: "))                  
+c = 0
+print()
+for i in range(x, (y+1)):                                                       
+    c = c + i
+
+print("The sum of ",x, ' to ', y, ' (inclusive) is: ', c)
