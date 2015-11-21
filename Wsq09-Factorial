@@ -1,0 +1,17 @@
+#Jorge Fernando Saldaña Cabal
+#A01350730
+
+def factorial(a):
+	res = 1
+	for i in range(1,a+1):
+		res = res * i
+	return(res)
+
+ans = 'y'
+while (ans == 'y'):
+	x = int(input('PLease type a number to which you want to know its factorial: '))
+	print ('The factorial of',x, ' is:', factorial(x))
+		
+	ans = str(input('Do you want to make another operation? y/n: '))
+	if (ans == 'n'):
+		print('Have a nice day!')
