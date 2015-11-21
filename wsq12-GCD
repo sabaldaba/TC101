@@ -1,0 +1,18 @@
+#Jorge Fernando Saldaña Cabal
+#A01350730
+
+x = int(input('Introduce an integer: '))
+y = int(input('Introduce another integer: '))
+
+a = x
+b = y
+def gdc(a,b):
+	while ( a!=b):
+		if (a>b):
+			a = a -b
+		else:	
+			b = b - a
+	if (a==b):
+		return a
+
+print ('The greates common divisor of',x,'and', y,'is:', gdc(a,b))
