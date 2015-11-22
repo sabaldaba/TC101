@@ -3,22 +3,24 @@
 
 #def checkBanana(a):
 import string
-count = 0
-x = 'BANANAS'
 
-
-archivo = open('bananas.txt','r')
-line = archivo.readline()
-str.upper(line)
-lines = archivo.readlines()
-" ".join(line)
-
-
-line = line.split(' ')
-for c in line:
-	if c == x:
-		count += 1
+def checkBananas(a):
+	count = 0
+	x = 'BANANAS'
+	archivo = open('bananas.txt','r')
+	line = archivo.readline()
+	str.upper(line)
+	lines = archivo.readlines()
+	" ".join(line)
 	
-print (count)
+	
+	line = line.split(' ')
+	for c in line:
+		if c == x:
+			count += 1
+	archivo.close	
+	return (count)
 
-archivo.close
+print (checkBananas('bananas.txt'))
+	
+	
