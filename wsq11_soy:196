@@ -1,0 +1,43 @@
+#Jorge Fernando Saldaña Cabal
+#A01350730
+def voltear(a):
+        a = str(a)
+        a = a[::-1]
+        a = int(a)
+        return(a)
+
+def soy_196(a,b):
+	natural = 0	
+	non_lychrel = 0  	#con repeticiones se hacen palindromios
+	limit = 0		#poner el numero de repeticiones antes de considerarse candidato
+	lychrel = 0   		#candidatos a lychrel	#Numeros que no ocupan repeticiones
+	for i in range(a,b+1):		
+		if (i == voltear(i)):
+			natural = natural + 1
+			#print("Natural",i)
+		else:
+			res = i + voltear(i)
+			limit = 1
+			while (res != voltear(res)) and (limit <= 30):
+				res = res + voltear(res)
+				limit = limit + 1
+			# why did we exit that loop?
+			if (limit > 30):
+				print("Hey, lychrel number found: ",i)
+				lychrel = lychrel + 1
+			elif (res == voltear(res)):
+				non_lychrel = non_lychrel + 1
+				#print("non-lych",i, " ",res)
+	return (natural, non_lychrel, lychrel) 
+     
+a = int(input('Give me the first number of the list you want to evaluate: '))
+b = int(input('Give me the last number of the list you want to evaluate: '))
+
+print('Calculating wheter each value within the list is: palyndrome, non-lychrel, or lychrel candidate')
+
+(na,non,lyc) = soy_196(a,b)
+
+print('The results are for the range', a, 'to', b)
+print('Natural palyndromes: ', na)
+print('Non-lychrel (become palyndrome: ', non)
+print('Lychrel candidates: ', lyc)
